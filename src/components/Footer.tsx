@@ -28,9 +28,7 @@ import Logo from "./Logo";
 import { 
   FacebookIcon, 
   LinkedinIcon, 
-  InstagramIcon, 
-  YoutubeIcon, 
-  WhatsappIcon 
+  InstagramIcon 
 } from "@/components/BrandIcons";
 
 export default function Footer() {
@@ -266,63 +264,89 @@ export default function Footer() {
               Contact Information
             </h4>
             
-            <div className="space-y-5 text-xs md:text-[13px]">
-              {/* Recruitment Contact */}
-              <div className="space-y-2">
-                <span className="text-[11px] font-bold text-white/50 uppercase tracking-widest block">
-                  International Recruitment
+            <div className="space-y-4 text-xs md:text-[13px]">
+              {/* Address */}
+              <div className="space-y-1.5 pb-2.5 border-b border-white/5">
+                <span className="text-[10px] font-bold text-accent uppercase tracking-widest block">
+                  Corporate Address
                 </span>
-                <div className="space-y-1">
-                  <a href="tel:+919718573005" className="flex items-center gap-2 text-white/80 hover:text-accent transition-colors w-fit">
-                    <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
-                    <span>+91-9718573005</span>
-                  </a>
-                  <a href="tel:+919990803701" className="flex items-center gap-2 text-white/80 hover:text-accent transition-colors w-fit">
-                    <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
-                    <span>+91-9990803701</span>
-                  </a>
-                  <a href="mailto:hr@ajtoverseas.com" className="flex items-center gap-2 text-white/80 hover:text-accent transition-colors w-fit">
-                    <Mail className="w-3.5 h-3.5 text-accent flex-shrink-0" />
-                    <span>hr@ajtoverseas.com</span>
-                  </a>
+                <div className="flex gap-2 text-white/80">
+                  <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                  <span className="leading-relaxed">
+                    AJT Overseas<br />
+                    A-1017, Tower 3, NXOne,<br />
+                    Techzone 4, Greater Noida
+                  </span>
                 </div>
               </div>
 
-              {/* Study Abroad Contact */}
-              <div className="space-y-2 border-t border-white/5 pt-3">
-                <span className="text-[11px] font-bold text-white/50 uppercase tracking-widest block">
-                  Study Abroad
-                </span>
-                <div className="space-y-1">
-                  <a href="tel:+919625903005" className="flex items-center gap-2 text-white/80 hover:text-accent transition-colors w-fit">
-                    <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
-                    <span>+91-9625903005</span>
-                  </a>
-                  <a href="tel:+918595433005" className="flex items-center gap-2 text-white/80 hover:text-accent transition-colors w-fit">
-                    <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
-                    <span>+91-8595433005</span>
-                  </a>
-                  <a href="mailto:recruiter@ajtoverseas.com" className="flex items-center gap-2 text-white/80 hover:text-accent transition-colors w-fit">
-                    <Mail className="w-3.5 h-3.5 text-accent flex-shrink-0" />
-                    <span>recruiter@ajtoverseas.com</span>
-                  </a>
+              {/* Grid of Desks to save vertical space */}
+              <div className="grid grid-cols-1 gap-3.5 pt-1.5">
+                {/* Business Enquiries */}
+                <div className="space-y-0.5">
+                  <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest block">
+                    Business Enquiries
+                  </span>
+                  <div className="flex flex-wrap gap-x-3 gap-y-1">
+                    <a href="tel:+919718570515" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
+                      <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                      <span>+91-9718570515</span>
+                    </a>
+                    <a href="mailto:info@ajtoverseas.com" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
+                      <Mail className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                      <span>info@ajtoverseas.com</span>
+                    </a>
+                  </div>
                 </div>
-              </div>
 
-              {/* Web link */}
-              <div className="border-t border-white/5 pt-3 flex items-center gap-2 text-white/80">
-                <Globe className="w-3.5 h-3.5 text-accent flex-shrink-0" />
-                <a href="https://www.ajtoverseas.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors flex items-center gap-1">
-                  <span>www.ajtoverseas.com</span>
-                  <ExternalLink className="w-3 h-3 opacity-50" />
-                </a>
+                {/* International Recruitment */}
+                <div className="space-y-0.5 border-t border-white/5 pt-2">
+                  <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest block">
+                    International Recruitment
+                  </span>
+                  <div className="flex flex-wrap gap-x-3 gap-y-1">
+                    <a href="tel:+919718573005" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
+                      <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                      <span>+91-9718573005</span>
+                    </a>
+                    <a href="tel:+919990803701" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
+                      <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                      <span>+91-9990803701</span>
+                    </a>
+                    <a href="mailto:hr@ajtoverseas.com" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
+                      <Mail className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                      <span>hr@ajtoverseas.com</span>
+                    </a>
+                  </div>
+                </div>
+
+                {/* Study Abroad */}
+                <div className="space-y-0.5 border-t border-white/5 pt-2">
+                  <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest block">
+                    Study Abroad
+                  </span>
+                  <div className="flex flex-wrap gap-x-3 gap-y-1">
+                    <a href="tel:+919625903005" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
+                      <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                      <span>+91-9625903005</span>
+                    </a>
+                    <a href="tel:+918595433005" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
+                      <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                      <span>+91-8595433005</span>
+                    </a>
+                    <a href="mailto:recruiter@ajtoverseas.com" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
+                      <Mail className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                      <span>recruiter@ajtoverseas.com</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Premium Contact Us CTA button */}
             <Link
               href="/contact"
-              className="mt-2 w-full bg-transparent hover:bg-accent hover:text-[#0B1220] border border-accent/40 hover:border-accent text-accent text-xs font-bold py-3 px-4 rounded-xl transition-all duration-300 text-center inline-flex items-center justify-center gap-2 shadow-sm"
+              className="mt-1 w-full bg-transparent hover:bg-accent hover:text-[#0B1220] border border-accent/40 hover:border-accent text-accent text-xs font-bold py-2.5 px-4 rounded-xl transition-all duration-300 text-center inline-flex items-center justify-center gap-2 shadow-sm"
             >
               Contact Our Consultants
               <ArrowRight className="w-3.5 h-3.5" />
@@ -406,11 +430,9 @@ export default function Footer() {
           {/* Right: Social icons with circular hover hover-glow */}
           <div className="lg:col-span-3 flex items-center justify-start lg:justify-end gap-3.5">
             {[
-              { icon: LinkedinIcon, href: "https://linkedin.com", name: "LinkedIn" },
-              { icon: FacebookIcon, href: "https://facebook.com", name: "Facebook" },
-              { icon: InstagramIcon, href: "https://instagram.com", name: "Instagram" },
-              { icon: YoutubeIcon, href: "https://youtube.com", name: "YouTube" },
-              { icon: WhatsappIcon, href: "https://wa.me/919718573005", name: "WhatsApp" }
+              { icon: LinkedinIcon, href: "https://www.linkedin.com/company/113023890/", name: "LinkedIn" },
+              { icon: FacebookIcon, href: "https://www.facebook.com/profile.php?id=61582255777532", name: "Facebook" },
+              { icon: InstagramIcon, href: "https://www.instagram.com/ajt_overseas/", name: "Instagram" }
             ].map((social, idx) => {
               const Icon = social.icon;
               return (

@@ -32,7 +32,7 @@ export default function TermsPage() {
           </p>
           <h2 className="text-lg font-bold text-primary">4. Governing Law</h2>
           <p>
-            Any disputes or queries regarding our services are governed under the Emigration Act of India and subject to the exclusive jurisdiction of the courts of Mumbai, India.
+            Any disputes or queries regarding our services are governed under the Emigration Act of India and subject to the exclusive jurisdiction of the courts of Gautam Buddha Nagar (Noida), Uttar Pradesh, India.
           </p>
         </div>
       </section>

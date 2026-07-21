@@ -59,25 +59,67 @@ export default function RootLayout({
   // Setup JSON-LD structured data for SEO
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "GovernmentService",
+    "@type": "Organization",
     "name": "AJT Overseas Private Limited",
     "alternateName": "AJT Overseas",
     "description": "Ethical international recruitment agency and elite study abroad consultancy approved by the Ministry of External Affairs, Govt of India.",
     "url": "https://ajtoverseas.com",
     "logo": "https://ajtoverseas.com/logo.png",
     "sameAs": [
-      "https://facebook.com/ajtoverseas",
-      "https://linkedin.com/company/ajtoverseas",
-      "https://instagram.com/ajtoverseas"
+      "https://www.linkedin.com/company/113023890/",
+      "https://www.facebook.com/profile.php?id=61582255777532",
+      "https://www.instagram.com/ajt_overseas/"
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Prime Business Park, Bandra West",
-      "addressLocality": "Mumbai",
-      "addressRegion": "Maharashtra",
-      "postalCode": "400050",
+      "streetAddress": "A-1017, Tower 3, NXOne, Techzone 4",
+      "addressLocality": "Greater Noida",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "201306",
       "addressCountry": "IN"
-    }
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-97185-70515",
+        "contactType": "Business Enquiries",
+        "email": "info@ajtoverseas.com",
+        "areaServed": "Global",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-97185-73005",
+        "contactType": "International Recruitment",
+        "email": "hr@ajtoverseas.com",
+        "areaServed": "Global",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-99908-03701",
+        "contactType": "International Recruitment",
+        "email": "hr@ajtoverseas.com",
+        "areaServed": "Global",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-96259-03005",
+        "contactType": "Study Abroad Desk",
+        "email": "recruiter@ajtoverseas.com",
+        "areaServed": "Global",
+        "availableLanguage": ["English", "Hindi"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-85954-33005",
+        "contactType": "Study Abroad Desk",
+        "email": "recruiter@ajtoverseas.com",
+        "areaServed": "Global",
+        "availableLanguage": ["English", "Hindi"]
+      }
+    ]
   };
 
   return (

@@ -13,7 +13,7 @@ export default function ContactPage() {
           <span className="text-[12px] font-bold text-accent tracking-widest uppercase mb-4 block">Get In Touch</span>
           <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-6">Contact AJT Overseas</h1>
           <p className="text-lg md:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            Reach out to our regional offices in Mumbai, Chennai, and New Delhi. Dedicated helpdesks are ready to support your inquiries.
+            Reach out to our offices in Greater Noida (HQ), Chennai, and New Delhi. Dedicated helpdesks are ready to support your inquiries.
           </p>
         </div>
       </section>

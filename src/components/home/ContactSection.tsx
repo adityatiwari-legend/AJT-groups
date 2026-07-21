@@ -10,9 +10,16 @@ import {
   Send,
   Building,
   GraduationCap,
+  Briefcase,
   Sparkles
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { 
+  FacebookIcon, 
+  LinkedinIcon, 
+  InstagramIcon, 
+  WhatsappIcon 
+} from "@/components/BrandIcons";
 
 type FormInputs = {
   name: string;
@@ -35,90 +42,180 @@ export default function ContactSection() {
     setTimeout(() => setFormState("idle"), 4000);
   };
 
+  // Cards Data representing the three specialized desks
+  const enquiryCards = [
+    {
+      id: "business",
+      badge: "Corporate Clients & Partners",
+      title: "Business Enquiries",
+      icon: Building,
+      iconColor: "text-blue-600 bg-blue-50",
+      glowBg: "bg-blue-500/5",
+      phone: "+91 9718570515",
+      phoneFormatted: "+91 97185 70515",
+      email: "info@ajtoverseas.com",
+      whatsapp: "919718570515"
+    },
+    {
+      id: "recruitment",
+      badge: "Student Enquiries",
+      title: "International Recruitment",
+      icon: Briefcase,
+      iconColor: "text-amber-600 bg-amber-50",
+      glowBg: "bg-amber-500/5",
+      phones: [
+        { raw: "+919718573005", formatted: "+91 97185 73005", wa: "919718573005" },
+        { raw: "+919990803701", formatted: "+91 99908 03701", wa: "919990803701" }
+      ],
+      email: "hr@ajtoverseas.com"
+    },
+    {
+      id: "study",
+      badge: "Student Enquiries",
+      title: "Study Abroad",
+      icon: GraduationCap,
+      iconColor: "text-purple-600 bg-purple-50",
+      glowBg: "bg-purple-500/5",
+      phones: [
+        { raw: "+919625903005", formatted: "+91 96259 03005", wa: "919625903005" },
+        { raw: "+918595433005", formatted: "+91 85954 33005", wa: "918595433005" }
+      ],
+      email: "recruiter@ajtoverseas.com"
+    }
+  ];
+
   return (
     <section className="py-24 bg-white relative overflow-hidden" id="contact">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      {/* Background radial glows */}
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          
-          {/* Left Column: Contact info & Map */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
-            <div>
-              <span className="text-[13px] font-bold text-secondary tracking-widest uppercase mb-4 block">
-                Connect With Us
-              </span>
-              <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-primary tracking-tight leading-tight mb-6">
-                Start Your Journey Today
-              </h2>
-              <p className="text-[16px] text-muted-custom leading-relaxed mb-8">
-                Reach out to our specialists. We have dedicated desks for corporate hiring clients and individual academic/job applicants.
-              </p>
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-[13px] font-bold text-secondary tracking-widest uppercase mb-4 block">
+            Connect With Us
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-primary tracking-tight leading-tight mb-6">
+            Get in Touch with Our Specialized Desks
+          </h2>
+          <p className="text-[16px] text-muted-custom leading-relaxed">
+            Reach out to our specialists today. We have dedicated desks with verified contact details for corporate partners and prospective students/candidates.
+          </p>
+        </div>
 
-              {/* Info Blocks */}
-              <div className="space-y-6 mb-8">
+        {/* 1. Three Information Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {enquiryCards.map((card, idx) => {
+            const CardIcon = card.icon;
+            return (
+              <motion.div
+                key={card.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="glass-card hover:-translate-y-2 hover:shadow-xl transition-all duration-500 rounded-3xl p-8 border border-borders relative overflow-hidden group flex flex-col justify-between"
+              >
+                {/* Visual Glow */}
+                <div className={`absolute top-0 right-0 w-24 h-24 ${card.glowBg} rounded-bl-[100px] pointer-events-none`} />
                 
-                {/* Recruitment Info */}
-                <div className="flex gap-4 p-4 rounded-xl bg-slate-50 border border-borders">
-                  <div className="p-2.5 bg-blue-50 text-blue-600 rounded-lg h-fit">
-                    <Building className="w-5 h-5" />
+                <div>
+                  {/* Header */}
+                  <div className="flex items-center gap-3.5 mb-6">
+                    <div className={`p-3.5 rounded-2xl ${card.iconColor}`}>
+                      <CardIcon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold text-accent tracking-wider uppercase">{card.badge}</span>
+                      <h3 className="text-lg md:text-xl font-bold text-primary">{card.title}</h3>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-primary mb-1">Corporate Recruitment Desk</h4>
-                    <p className="text-xs text-muted-custom">For overseas employers seeking talent mobilization.</p>
-                    <a href="mailto:corporate@ajtoverseas.com" className="text-xs font-semibold text-secondary block mt-1 hover:text-accent">corporate@ajtoverseas.com</a>
+                  
+                  {/* Contacts */}
+                  <div className="space-y-5">
+                    {/* Call/WhatsApp Info */}
+                    <div className="space-y-3">
+                      <span className="text-[10px] font-bold text-muted-custom uppercase tracking-wider block">Call or WhatsApp</span>
+                      
+                      {card.id === "business" ? (
+                        <div className="flex items-center justify-between text-sm font-semibold text-primary">
+                          <a 
+                            href={`tel:${card.phone}`} 
+                            className="flex items-center gap-2 hover:text-secondary transition-colors"
+                            title="Click to Call"
+                          >
+                            <Phone className="w-4 h-4 text-secondary/70" />
+                            <span>{card.phoneFormatted}</span>
+                          </a>
+                          <a 
+                            href={`https://wa.me/${card.whatsapp}`} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="p-2 bg-emerald-50 text-emerald-600 rounded-xl hover:bg-emerald-100 hover:scale-105 transition-all flex items-center justify-center" 
+                            title="Chat on WhatsApp"
+                            aria-label={`Chat with Business Desk on WhatsApp`}
+                          >
+                            <WhatsappIcon size={16} />
+                          </a>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col gap-3">
+                          {card.phones?.map((phoneObj, pIdx) => (
+                            <div key={pIdx} className="flex items-center justify-between text-sm font-semibold text-primary">
+                              <a 
+                                href={`tel:${phoneObj.raw}`} 
+                                className="flex items-center gap-2 hover:text-secondary transition-colors"
+                                title="Click to Call"
+                              >
+                                <Phone className="w-4 h-4 text-secondary/70" />
+                                <span>{phoneObj.formatted}</span>
+                              </a>
+                              <a 
+                                href={`https://wa.me/${phoneObj.wa}`} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="p-2 bg-emerald-50 text-emerald-600 rounded-xl hover:bg-emerald-100 hover:scale-105 transition-all flex items-center justify-center" 
+                                title="Chat on WhatsApp"
+                                aria-label={`Chat with ${card.title} on WhatsApp`}
+                              >
+                                <WhatsappIcon size={16} />
+                              </a>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Email Info */}
+                    <div className="border-t border-slate-100 pt-4 space-y-2">
+                      <span className="text-[10px] font-bold text-muted-custom uppercase tracking-wider block">Official Email</span>
+                      <a 
+                        href={`mailto:${card.email}`} 
+                        className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-secondary transition-colors w-fit"
+                        title="Click to Email"
+                      >
+                        <Mail className="w-4 h-4 text-secondary/70" />
+                        <span>{card.email}</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
+              </motion.div>
+            );
+          })}
+        </div>
 
-                {/* Study Info */}
-                <div className="flex gap-4 p-4 rounded-xl bg-slate-50 border border-borders">
-                  <div className="p-2.5 bg-amber-50 text-amber-600 rounded-lg h-fit">
-                    <GraduationCap className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-primary mb-1">Study Abroad &amp; Candidate Desk</h4>
-                    <p className="text-xs text-muted-custom">For students and professionals seeking career support.</p>
-                    <a href="mailto:apply@ajtoverseas.com" className="text-xs font-semibold text-secondary block mt-1 hover:text-accent">apply@ajtoverseas.com</a>
-                  </div>
-                </div>
-
-                {/* Contact numbers */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex items-center gap-3 text-xs text-primary font-semibold">
-                    <Phone className="w-4 h-4 text-accent" />
-                    <span>+91 999 999 9999</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-xs text-primary font-semibold">
-                    <Clock className="w-4 h-4 text-accent" />
-                    <span>Mon - Sat: 9 AM - 6 PM</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Stylized Map View or Embed */}
-            <div className="w-full h-56 rounded-2xl border border-borders bg-slate-50 overflow-hidden relative shadow-inner">
-              {/* Premium Vector Map representation */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(23,63,122,0.1)_0%,rgba(248,250,252,1)_100%)] flex items-center justify-center">
-                {/* Globe/Grid SVG pattern */}
-                <svg className="w-full h-full opacity-60" viewBox="0 0 400 200" fill="none">
-                  <path d="M50 100 C150 50 250 150 350 100" stroke="#CBD5E1" strokeWidth="1" />
-                  <path d="M50 130 C150 80 250 180 350 130" stroke="#CBD5E1" strokeWidth="1" />
-                  <circle cx="200" cy="100" r="40" stroke="#D4AF37" strokeWidth="1" strokeDasharray="3 3" />
-                  <circle cx="200" cy="100" r="5" fill="#173F7A animate-pulse" />
-                </svg>
-                <div className="absolute flex flex-col items-center gap-1.5 text-center">
-                  <MapPin className="w-6 h-6 text-accent animate-bounce" />
-                  <span className="text-xs font-bold text-primary">Headquarters</span>
-                  <span className="text-[10px] text-muted-custom">Bandra West, Mumbai, India</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Right Column: Modern Contact Form */}
+        {/* 2. Grid for Form & Address/Map info */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          
+          {/* Left Column: Form Card */}
           <div className="lg:col-span-7">
-            <div className="bg-slate-50 border border-borders rounded-[32px] p-8 md:p-10 shadow-sm relative">
+            <div className="bg-slate-50 border border-borders rounded-[32px] p-8 md:p-10 shadow-sm relative overflow-hidden">
+              {/* Form subtle glows */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+              
               <AnimatePresence mode="wait">
                 {formState === "success" ? (
                   <motion.div
@@ -131,16 +228,16 @@ export default function ContactSection() {
                     <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 border border-emerald-100 shadow-md">
                       <Sparkles className="w-8 h-8" />
                     </div>
-                    <h3 className="text-2xl font-bold text-primary mb-3">Enquiry Submitted Successfully</h3>
+                    <h3 className="text-2xl font-bold text-primary mb-3">Enquiry Submitted</h3>
                     <p className="text-sm text-muted-custom leading-relaxed max-w-sm">
-                      Thank you for contacting AJT Overseas. One of our specialized career advisors will contact you within 24 business hours.
+                      Thank you for contacting AJT Overseas. One of our specialized advisors will get in touch with you within 24 business hours.
                     </p>
                   </motion.div>
                 ) : (
                   <motion.form
                     key="form"
                     onSubmit={handleSubmit(onSubmit)}
-                    className="flex flex-col gap-6"
+                    className="flex flex-col gap-6 relative z-10"
                   >
                     <div className="text-xs font-bold text-muted-custom uppercase tracking-widest border-b border-borders pb-2">
                       Send An Enquiry
@@ -151,7 +248,7 @@ export default function ContactSection() {
                       <label className="text-xs font-bold text-primary uppercase">Inquiry Category</label>
                       <select
                         {...register("inquiryType", { required: true })}
-                        className="bg-white border border-borders rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-all"
+                        className="bg-white border border-borders rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-secondary transition-all"
                       >
                         <option value="recruitment">Corporate Recruitment Solutions</option>
                         <option value="study">Study Abroad Consulting</option>
@@ -167,7 +264,7 @@ export default function ContactSection() {
                           type="text"
                           placeholder="Your Name"
                           {...register("name", { required: "Name is required" })}
-                          className={`bg-white border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-all ${errors.name ? 'border-red-500' : 'border-borders'}`}
+                          className={`bg-white border rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-secondary transition-all ${errors.name ? 'border-red-500' : 'border-borders'}`}
                         />
                         {errors.name && <span className="text-[10px] text-red-500 font-semibold">{errors.name.message}</span>}
                       </div>
@@ -182,7 +279,7 @@ export default function ContactSection() {
                             required: "Email is required",
                             pattern: { value: /^\S+@\S+$/i, message: "Invalid email address" }
                           })}
-                          className={`bg-white border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-all ${errors.email ? 'border-red-500' : 'border-borders'}`}
+                          className={`bg-white border rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-secondary transition-all ${errors.email ? 'border-red-500' : 'border-borders'}`}
                         />
                         {errors.email && <span className="text-[10px] text-red-500 font-semibold">{errors.email.message}</span>}
                       </div>
@@ -195,7 +292,7 @@ export default function ContactSection() {
                         type="tel"
                         placeholder="+91 XXXXX XXXXX"
                         {...register("phone", { required: "Phone number is required" })}
-                        className={`bg-white border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-all ${errors.phone ? 'border-red-500' : 'border-borders'}`}
+                        className={`bg-white border rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-secondary transition-all ${errors.phone ? 'border-red-500' : 'border-borders'}`}
                       />
                       {errors.phone && <span className="text-[10px] text-red-500 font-semibold">{errors.phone.message}</span>}
                     </div>
@@ -207,7 +304,7 @@ export default function ContactSection() {
                         rows={4}
                         placeholder="Detail your hiring numbers, visa case, or university programs of interest..."
                         {...register("message", { required: "Message is required" })}
-                        className={`bg-white border rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-secondary transition-all ${errors.message ? 'border-red-500' : 'border-borders'}`}
+                        className={`bg-white border rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-secondary transition-all ${errors.message ? 'border-red-500' : 'border-borders'}`}
                       />
                       {errors.message && <span className="text-[10px] text-red-500 font-semibold">{errors.message.message}</span>}
                     </div>
@@ -231,6 +328,97 @@ export default function ContactSection() {
                 )}
               </AnimatePresence>
             </div>
+          </div>
+
+          {/* Right Column: Address, Map, and Socials */}
+          <div className="lg:col-span-5 flex flex-col gap-8">
+            
+            {/* Address Card */}
+            <div className="glass-card border border-borders rounded-3xl p-7 shadow-sm space-y-5">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 bg-blue-50 text-secondary rounded-xl">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Head Office</span>
+                  <h4 className="font-bold text-primary text-base">Corporate Headquarters</h4>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <span className="text-[15px] font-bold text-primary block">AJT Overseas</span>
+                <p className="text-sm text-muted-custom leading-relaxed">
+                  A-1017, Tower 3, NXOne, Techzone 4, Greater Noida
+                </p>
+              </div>
+
+              <div className="border-t border-slate-100 pt-4 flex flex-col gap-2.5 text-xs text-muted-custom">
+                <div className="flex items-center gap-2.5">
+                  <Clock className="w-4 h-4 text-secondary/60 flex-shrink-0" />
+                  <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Stylized Map View */}
+            <div className="w-full h-56 rounded-3xl border border-borders bg-slate-50 overflow-hidden relative shadow-inner">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(23,63,122,0.08)_0%,rgba(248,250,252,1)_100%)] flex items-center justify-center">
+                {/* Globe/Grid SVG pattern */}
+                <svg className="w-full h-full opacity-50" viewBox="0 0 400 200" fill="none">
+                  <path d="M50 100 C150 50 250 150 350 100" stroke="#CBD5E1" strokeWidth="1" />
+                  <path d="M50 130 C150 80 250 180 350 130" stroke="#CBD5E1" strokeWidth="1" />
+                  <circle cx="200" cy="100" r="40" stroke="#D4AF37" strokeWidth="1" strokeDasharray="3 3" />
+                  <circle cx="200" cy="100" r="5" fill="#173F7A" />
+                </svg>
+                <div className="absolute flex flex-col items-center gap-1.5 text-center px-4">
+                  <MapPin className="w-6 h-6 text-accent animate-bounce" />
+                  <span className="text-xs font-bold text-primary">Greater Noida HQ</span>
+                  <span className="text-[10px] text-muted-custom">Tower 3, NXOne, Techzone 4, UP</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="glass-card border border-borders rounded-3xl p-6 shadow-sm space-y-4">
+              <h4 className="font-bold text-primary text-sm tracking-wide">Follow Our Official Handles</h4>
+              <div className="flex items-center gap-3">
+                {[
+                  { 
+                    icon: LinkedinIcon, 
+                    href: "https://www.linkedin.com/company/113023890/", 
+                    name: "LinkedIn",
+                    color: "hover:border-blue-600 hover:text-blue-600" 
+                  },
+                  { 
+                    icon: FacebookIcon, 
+                    href: "https://www.facebook.com/profile.php?id=61582255777532", 
+                    name: "Facebook",
+                    color: "hover:border-blue-700 hover:text-blue-700" 
+                  },
+                  { 
+                    icon: InstagramIcon, 
+                    href: "https://www.instagram.com/ajt_overseas/", 
+                    name: "Instagram",
+                    color: "hover:border-pink-600 hover:text-pink-600" 
+                  }
+                ].map((social, idx) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={idx}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit our ${social.name} page`}
+                      className={`w-10 h-10 rounded-xl border border-borders text-muted-custom bg-white flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-md ${social.color}`}
+                    >
+                      <Icon size={18} />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+
           </div>
 
         </div>
