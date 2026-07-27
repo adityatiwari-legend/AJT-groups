@@ -96,6 +96,17 @@ export default function Navbar() {
     }
   };
 
+  const handleHomeClick = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      if ((window as any).lenis) {
+        (window as any).lenis.scrollTo(0, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <>
       <header
@@ -108,7 +119,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
           
           {/* Logo (Optimized height for legibility of the custom logo text) */}
-          <Link href="/" className="h-11 md:h-14 flex items-center">
+          <Link href="/" onClick={handleHomeClick} className="h-11 md:h-14 flex items-center">
             <Logo light={false} showText={true} className="h-full" />
           </Link>
 
@@ -116,6 +127,7 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
             <Link 
               href="/" 
+              onClick={handleHomeClick}
               className={`text-sm xl:text-[15px] font-medium transition-colors ${
                 pathname === "/" ? "text-secondary font-bold" : "text-primary hover:text-secondary"
               }`}
@@ -156,7 +168,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.98 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute left-1/2 -translate-x-1/2 mt-3.5 w-[600px] glass-card rounded-2xl p-6 grid grid-cols-1 gap-4 shadow-xl z-50 bg-white"
+                    className="absolute left-1/2 -translate-x-1/2 mt-3.5 w-[600px] bg-white rounded-2xl p-6 grid grid-cols-1 gap-4 shadow-2xl z-50 border border-slate-200"
                   >
                     <div className="text-xs font-bold text-muted-custom uppercase tracking-widest border-b border-slate-100 pb-2">
                       Our Solutions
@@ -221,7 +233,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.98 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute left-1/2 -translate-x-1/2 mt-3.5 w-[720px] glass-card rounded-2xl p-6 grid grid-cols-2 gap-6 shadow-xl z-50 bg-white"
+                    className="absolute left-1/2 -translate-x-1/2 mt-3.5 w-[720px] bg-white rounded-2xl p-6 grid grid-cols-2 gap-6 shadow-2xl z-50 border border-slate-200"
                   >
                     <div>
                       <div className="flex items-center gap-2 text-xs font-bold text-muted-custom uppercase tracking-widest border-b border-slate-100 pb-2 mb-4">
@@ -332,6 +344,7 @@ export default function Navbar() {
             <div className="flex flex-col gap-5">
               <Link 
                 href="/" 
+                onClick={(e) => { handleHomeClick(e); setMobileMenuOpen(false); }}
                 className="text-[16px] font-bold text-primary hover:text-secondary border-b border-slate-50 pb-2.5"
               >
                 Home

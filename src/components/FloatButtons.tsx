@@ -30,10 +30,9 @@ export default function FloatButtons() {
   };
 
   const openWhatsApp = () => {
-    // Open WhatsApp Chat
-    const phoneNumber = "919999999999"; // Replace with actual number
+    const phoneNumber = "919718573005";
     const text = encodeURIComponent(
-      "Hello AJT Overseas! I would like to inquire about your International Recruitment, Study Abroad, and Visa Assistance solutions."
+      "Hello AJT Overseas! I would like to book a counselling session for International Recruitment or Study Abroad."
     );
     window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
   };
@@ -54,7 +53,7 @@ export default function FloatButtons() {
 
         {/* Hover Label */}
         <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-slate-900 text-white text-xs px-3 py-1.5 rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md">
-          Chat with an Expert
+          Book Counselling on WhatsApp
         </span>
       </motion.button>
 

@@ -3,6 +3,7 @@ import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import Services from "@/components/home/Services";
 import Countries from "@/components/home/Countries";
+import StudyAbroadDestinations from "@/components/home/StudyAbroadDestinations";
 import Industries from "@/components/home/Industries";
 import TimelineSection from "@/components/home/TimelineSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
@@ -25,6 +26,9 @@ export default function Home() {
 
       {/* 4. Tabbed Countries Directory */}
       <Countries />
+
+      {/* 4b. Comprehensive Study Abroad Destinations */}
+      <StudyAbroadDestinations />
 
       {/* 5. Industries Grid Sourcing */}
       <Industries />

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { 
   ArrowRight, 
@@ -11,10 +11,18 @@ import {
   Search,
   Users,
   Compass,
-  Coins
+  Coins,
+  MessageSquare,
+  Eye,
+  CheckCircle2
 } from "lucide-react";
 
 export default function EmployerCandidateSections() {
+  const [selectedPoster, setSelectedPoster] = useState<string | null>(null);
+
+  const whatsappRecruitment = "https://wa.me/919718573005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20book%20a%20counselling%20session%20for%20International%20Recruitment";
+  const whatsappStudy = "https://wa.me/919625903005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20book%20a%20counselling%20session%20for%20Study%20Abroad";
+
   return (
     <div className="flex flex-col">
       
@@ -29,13 +37,13 @@ export default function EmployerCandidateSections() {
             {/* Left Content */}
             <div className="lg:col-span-7">
               <span className="text-[12px] font-bold text-accent tracking-widest uppercase mb-4 block">
-                For Global Employers
+                For Global Employers &amp; Recruitment
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-[42px] font-black tracking-tight leading-tight mb-6">
-                Premium Recruitment &amp; Mobilization Solutions
+                Your Talent. Global Opportunities.
               </h2>
               <p className="text-[16px] text-white/80 leading-relaxed mb-8 max-w-2xl">
-                AJT Overseas is the trusted manpower provider for global enterprises. We manage everything from executive search mandates to bulk project deployments of skilled labor, complying with local regulations.
+                AJT Overseas is the trusted manpower provider for global enterprises. We manage everything from executive search mandates to bulk project deployments of skilled labor across 60+ countries.
               </p>
 
               {/* Solutions Grid */}
@@ -57,42 +65,74 @@ export default function EmployerCandidateSections() {
                 ))}
               </div>
 
-              <Link
-                href="/employers"
-                className="bg-accent hover:bg-hover-accent text-primary text-[15px] font-bold px-8 py-3.5 rounded-xl inline-flex items-center gap-2 transition-all shadow-md"
-              >
-                Request Custom Talent Solutions
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <a
+                  href={whatsappRecruitment}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 transition-all shadow-lg"
+                >
+                  <MessageSquare className="w-4 h-4 fill-current" />
+                  <span>Book Counselling Session (+91-9718573005)</span>
+                </a>
+                <Link
+                  href="/services/international-recruitment"
+                  className="w-full sm:w-auto bg-accent hover:bg-hover-accent text-primary text-[15px] font-bold px-8 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 transition-all shadow-md"
+                >
+                  View Destinations
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
 
-            {/* Right Graphic Panel */}
+            {/* Right Graphic / Poster Panel */}
             <div className="lg:col-span-5">
-              <div className="bg-white/5 border border-white/10 rounded-[32px] p-8 backdrop-blur-md relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center text-accent">
-                    <Building2 className="w-5 h-5" />
+              <div className="bg-white/5 border border-white/10 rounded-[32px] p-6 backdrop-blur-md relative group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center text-accent">
+                      <Building2 className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white">International Recruitment</h4>
+                      <p className="text-[10px] text-white/50">Official Manpower Sourcing</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-white">Client Portfolio</h4>
-                    <p className="text-[10px] text-white/50">Active Global Partnerships</p>
-                  </div>
+
+                  <button
+                    onClick={() => setSelectedPoster("/images/international-recruitment-poster.jpg")}
+                    className="text-xs text-accent hover:underline flex items-center gap-1 font-bold cursor-pointer"
+                  >
+                    <Eye className="w-3.5 h-3.5" />
+                    Expand Poster
+                  </button>
                 </div>
                 
-                {/* Micro statistic widgets inside graphic */}
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-3.5 bg-white/5 rounded-xl border border-white/5">
-                    <span className="text-xs text-white/80">Average Deployment Time</span>
-                    <span className="text-xs font-bold text-accent">28 Days</span>
+                {/* Official Poster Thumbnail */}
+                <div 
+                  onClick={() => setSelectedPoster("/images/international-recruitment-poster.jpg")}
+                  className="relative rounded-2xl overflow-hidden border border-white/10 cursor-pointer shadow-lg group/img"
+                >
+                  <img
+                    src="/images/international-recruitment-poster.jpg"
+                    alt="International Recruitment Official Poster"
+                    className="w-full h-64 object-cover object-top transition-transform duration-500 group-hover/img:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-xs gap-2">
+                    <Eye className="w-4 h-4" /> Click to view full poster
                   </div>
-                  <div className="flex items-center justify-between p-3.5 bg-white/5 rounded-xl border border-white/5">
-                    <span className="text-xs text-white/80">Compliance Approval Rate</span>
-                    <span className="text-xs font-bold text-accent">100% Guaranteed</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3.5 bg-white/5 rounded-xl border border-white/5">
-                    <span className="text-xs text-white/80">Trade Testing Standards</span>
-                    <span className="text-xs font-bold text-accent">ISO 9001 Audited</span>
-                  </div>
+                </div>
+
+                <div className="mt-4 flex items-center justify-between text-xs text-white/80">
+                  <span>Call/WhatsApp: <strong>+91-9718573005</strong></span>
+                  <a
+                    href={whatsappRecruitment}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#25D366] font-bold hover:underline"
+                  >
+                    Apply Now
+                  </a>
                 </div>
               </div>
             </div>
@@ -169,13 +209,24 @@ export default function EmployerCandidateSections() {
                 </div>
               </div>
 
-              <Link
-                href="/jobs"
-                className="bg-secondary hover:bg-primary text-white text-[15px] font-bold px-8 py-3.5 rounded-xl inline-flex items-center gap-2 transition-all shadow-md"
-              >
-                Register as Candidate
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <a
+                  href={whatsappRecruitment}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 transition-all shadow-md"
+                >
+                  <MessageSquare className="w-4 h-4 fill-current" />
+                  <span>Book Counselling Session</span>
+                </a>
+                <Link
+                  href="/jobs"
+                  className="w-full sm:w-auto bg-secondary hover:bg-primary text-white text-[15px] font-bold px-8 py-3.5 rounded-xl inline-flex items-center gap-2 transition-all shadow-md"
+                >
+                  Register as Candidate
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
 
           </div>
@@ -220,41 +271,74 @@ export default function EmployerCandidateSections() {
                 </div>
               </div>
 
-              <Link
-                href="/contact"
-                className="bg-accent hover:bg-hover-accent text-primary text-[15px] font-bold px-8 py-3.5 rounded-xl inline-flex items-center gap-2 transition-all shadow-md"
-              >
-                Book Free Academic Consultation
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <a
+                  href={whatsappStudy}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 transition-all shadow-md"
+                >
+                  <MessageSquare className="w-4 h-4 fill-current" />
+                  <span>Book Counselling Session (+91-9625903005)</span>
+                </a>
+                <Link
+                  href="/services/study-abroad"
+                  className="w-full sm:w-auto bg-accent hover:bg-hover-accent text-primary text-[15px] font-bold px-8 py-3.5 rounded-xl inline-flex items-center gap-2 transition-all shadow-md"
+                >
+                  Explore Destinations
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
 
-            {/* Right Graphic */}
+            {/* Right Graphic / Poster Panel */}
             <div className="lg:col-span-5">
-              <div className="bg-white border border-borders rounded-[32px] p-8 relative">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-accent">
-                    <GraduationCap className="w-5 h-5" />
+              <div className="bg-white border border-borders rounded-[32px] p-6 shadow-md relative group">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-accent">
+                      <GraduationCap className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-primary">Study Abroad Program</h4>
+                      <p className="text-[10px] text-muted-custom">University Advisory</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-primary">Academic Placement</h4>
-                    <p className="text-[10px] text-muted-custom">University milestones</p>
+
+                  <button
+                    onClick={() => setSelectedPoster("/images/study-abroad-poster.jpg")}
+                    className="text-xs text-secondary hover:underline flex items-center gap-1 font-bold cursor-pointer"
+                  >
+                    <Eye className="w-3.5 h-3.5" />
+                    Expand Poster
+                  </button>
+                </div>
+
+                {/* Poster Thumbnail */}
+                <div 
+                  onClick={() => setSelectedPoster("/images/study-abroad-poster.jpg")}
+                  className="relative rounded-2xl overflow-hidden border border-borders cursor-pointer shadow-sm group/img bg-slate-900"
+                >
+                  <img
+                    src="/images/study-abroad-poster.jpg"
+                    alt="Study Abroad Official Poster"
+                    className="w-full h-64 object-cover object-top transition-transform duration-500 group-hover/img:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-xs gap-2">
+                    <Eye className="w-4 h-4" /> Click to view full poster
                   </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-3.5 bg-slate-50 rounded-xl border border-borders">
-                    <span className="text-xs font-semibold text-primary">Admissions Success Rate</span>
-                    <span className="text-xs font-bold text-secondary">99.2%</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3.5 bg-slate-50 rounded-xl border border-borders">
-                    <span className="text-xs font-semibold text-primary">Scholarship Assistance</span>
-                    <span className="text-xs font-bold text-secondary">Up to $15,000/yr</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3.5 bg-slate-50 rounded-xl border border-borders">
-                    <span className="text-xs font-semibold text-primary">Global University Tie-Ups</span>
-                    <span className="text-xs font-bold text-secondary">150+ Partner Unis</span>
-                  </div>
+                <div className="mt-4 flex items-center justify-between text-xs text-primary font-semibold">
+                  <span>Call/WhatsApp: <strong>+91-9625903005</strong></span>
+                  <a
+                    href={whatsappStudy}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#25D366] font-bold hover:underline"
+                  >
+                    Book Now
+                  </a>
                 </div>
               </div>
             </div>
@@ -262,6 +346,54 @@ export default function EmployerCandidateSections() {
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal for Posters */}
+      {selectedPoster && (
+        <div
+          onClick={() => setSelectedPoster(null)}
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-3xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl p-4 flex flex-col max-h-[90vh]"
+          >
+            <div className="flex items-center justify-between pb-3 px-2 border-b border-borders">
+              <h3 className="text-sm font-bold text-primary">AJT Overseas Official Poster</h3>
+              <button
+                onClick={() => setSelectedPoster(null)}
+                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center font-bold text-xs cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+            
+            <div className="overflow-y-auto p-2 my-2 flex justify-center bg-slate-900 rounded-2xl">
+              <img
+                src={selectedPoster}
+                alt="AJT Overseas Poster"
+                className="max-h-[70vh] w-auto object-contain rounded-xl"
+              />
+            </div>
+
+            <div className="pt-2 px-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <p className="text-xs text-muted-custom">
+                {selectedPoster.includes("recruitment")
+                  ? "Call/WhatsApp: +91-9718573005 | hr@ajtoverseas.com"
+                  : "Call/WhatsApp: +91-9625903005 | recruiter@ajtoverseas.com"}
+              </p>
+              <a
+                href={selectedPoster.includes("recruitment") ? whatsappRecruitment : whatsappStudy}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold px-6 py-2.5 rounded-xl inline-flex items-center gap-2 shadow-md"
+              >
+                <MessageSquare className="w-4 h-4 fill-current" />
+                <span>Book Counselling on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );
