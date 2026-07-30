@@ -65,7 +65,7 @@ export default function ContactSection() {
       glowBg: "bg-amber-500/5",
       phones: [
         { raw: "+919990998229", formatted: "+91 99909 98229", wa: "919990998229" },
-        { raw: "+919990803701", formatted: "+91 99908 03701", wa: "919990803701" }
+        { raw: "+919990998229", formatted: "+91 99909 98229", wa: "919990998229" }
       ],
       email: "hr@ajtoverseas.com"
     },
