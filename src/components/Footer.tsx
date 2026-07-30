@@ -305,9 +305,9 @@ export default function Footer() {
                     International Recruitment
                   </span>
                   <div className="flex flex-wrap gap-x-3 gap-y-1">
-                    <a href="tel:+919718573005" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
+                    <a href="tel:+919990998229" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
                       <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
-                      <span>+91-9718573005</span>
+                      <span>+91-9990998229</span>
                     </a>
                     <a href="tel:+919990803701" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
                       <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
@@ -326,9 +326,9 @@ export default function Footer() {
                     Study Abroad
                   </span>
                   <div className="flex flex-wrap gap-x-3 gap-y-1">
-                    <a href="tel:+919625903005" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
+                    <a href="tel:+918595433005" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
                       <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />
-                      <span>+91-9625903005</span>
+                      <span>+91-8595433005</span>
                     </a>
                     <a href="tel:+918595433005" className="flex items-center gap-1.5 text-white/80 hover:text-accent transition-colors w-fit">
                       <Phone className="w-3.5 h-3.5 text-accent flex-shrink-0" />

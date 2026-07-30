@@ -20,8 +20,8 @@ import {
 export default function EmployerCandidateSections() {
   const [selectedPoster, setSelectedPoster] = useState<string | null>(null);
 
-  const whatsappRecruitment = "https://wa.me/919718573005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20book%20a%20counselling%20session%20for%20International%20Recruitment";
-  const whatsappStudy = "https://wa.me/919625903005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20book%20a%20counselling%20session%20for%20Study%20Abroad";
+  const whatsappRecruitment = "https://wa.me/919990998229?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20International%20Recruitment";
+  const whatsappStudy = "https://wa.me/918595433005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20Study%20Abroad";
 
   return (
     <div className="flex flex-col">
@@ -73,7 +73,7 @@ export default function EmployerCandidateSections() {
                   className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 transition-all shadow-lg"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
-                  <span>Book Counselling Session (+91-9718573005)</span>
+                  <span>Book Counselling Session (+91-9990998229)</span>
                 </a>
                 <Link
                   href="/services/international-recruitment"
@@ -124,7 +124,7 @@ export default function EmployerCandidateSections() {
                 </div>
 
                 <div className="mt-4 flex items-center justify-between text-xs text-white/80">
-                  <span>Call/WhatsApp: <strong>+91-9718573005</strong></span>
+                  <span>Call/WhatsApp: <strong>+91-9990998229</strong></span>
                   <a
                     href={whatsappRecruitment}
                     target="_blank"
@@ -279,7 +279,7 @@ export default function EmployerCandidateSections() {
                   className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 transition-all shadow-md"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
-                  <span>Book Counselling Session (+91-9625903005)</span>
+                  <span>Book Counselling Session (+91-8595433005)</span>
                 </a>
                 <Link
                   href="/services/study-abroad"
@@ -330,7 +330,7 @@ export default function EmployerCandidateSections() {
                 </div>
 
                 <div className="mt-4 flex items-center justify-between text-xs text-primary font-semibold">
-                  <span>Call/WhatsApp: <strong>+91-9625903005</strong></span>
+                  <span>Call/WhatsApp: <strong>+91-8595433005</strong></span>
                   <a
                     href={whatsappStudy}
                     target="_blank"
@@ -378,8 +378,8 @@ export default function EmployerCandidateSections() {
             <div className="pt-2 px-2 flex flex-col sm:flex-row items-center justify-between gap-3">
               <p className="text-xs text-muted-custom">
                 {selectedPoster.includes("recruitment")
-                  ? "Call/WhatsApp: +91-9718573005 | hr@ajtoverseas.com"
-                  : "Call/WhatsApp: +91-9625903005 | recruiter@ajtoverseas.com"}
+                  ? "Call/WhatsApp: +91-9990998229 | hr@ajtoverseas.com"
+                  : "Call/WhatsApp: +91-8595433005 | recruiter@ajtoverseas.com"}
               </p>
               <a
                 href={selectedPoster.includes("recruitment") ? whatsappRecruitment : whatsappStudy}

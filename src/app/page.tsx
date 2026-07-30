@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
+import DirectorsMessage from "@/components/home/DirectorsMessage";
 import Services from "@/components/home/Services";
 import Countries from "@/components/home/Countries";
 import StudyAbroadDestinations from "@/components/home/StudyAbroadDestinations";
@@ -20,6 +21,9 @@ export default function Home() {
 
       {/* 2. About AJT Overseas */}
       <About />
+
+      {/* 2b. Director's Message
+      <DirectorsMessage /> */}
 
       {/* 3. Services Vertical Overview */}
       <Services />

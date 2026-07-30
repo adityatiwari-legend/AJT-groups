@@ -144,6 +144,15 @@ export default function Navbar() {
               About Us
             </Link>
 
+            <Link 
+              href="/directors-message" 
+              className={`text-sm xl:text-[15px] font-medium transition-colors ${
+                pathname === "/directors-message" ? "text-secondary font-bold" : "text-primary hover:text-secondary"
+              }`}
+            >
+              Director's Message
+            </Link>
+
             {/* Services Dropdown */}
             <div 
               className="relative"
@@ -355,6 +364,13 @@ export default function Navbar() {
                 className="text-[16px] font-bold text-primary hover:text-secondary border-b border-slate-50 pb-2.5"
               >
                 About Us
+              </Link>
+
+              <Link 
+                href="/directors-message" 
+                className="text-[16px] font-bold text-primary hover:text-secondary border-b border-slate-50 pb-2.5"
+              >
+                Director's Message
               </Link>
 
               {/* Services Mobile */}

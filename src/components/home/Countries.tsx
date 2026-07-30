@@ -15,11 +15,11 @@ export default function Countries() {
 
   const currentCountries = activeTab === "recruitment" ? recruitmentList : studyList;
 
-  const whatsappRecruitment = "https://wa.me/919718573005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20book%20a%20counselling%20session%20for%20International%20Recruitment";
-  const whatsappStudy = "https://wa.me/919625903005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20book%20a%20counselling%20session%20for%20Study%20Abroad";
+  const whatsappRecruitment = "https://wa.me/919990998229?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20International%20Recruitment";
+  const whatsappStudy = "https://wa.me/918595433005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20Study%20Abroad";
 
   const currentWhatsapp = activeTab === "recruitment" ? whatsappRecruitment : whatsappStudy;
-  const currentPhone = activeTab === "recruitment" ? "+91-9718573005" : "+91-9625903005";
+  const currentPhone = activeTab === "recruitment" ? "+91-9990998229" : "+91-8595433005";
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">

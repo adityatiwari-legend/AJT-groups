@@ -36,13 +36,17 @@ export default function JobsPage() {
   }, [search, selectedCountry, selectedIndustry, selectedExp]);
 
   const handleApply = (job: any) => {
-    setAppliedJob(job);
-    setFormSubmitted(false);
+    const text = encodeURIComponent(`Hello AJT Overseas, I would like to apply for the position: ${job.title} (${job.country})`);
+    window.open(`https://wa.me/919990998229?text=${text}`, "_blank");
   };
 
   const submitApplication = (e: React.FormEvent) => {
     e.preventDefault();
     setFormSubmitted(true);
+    if (appliedJob) {
+      const text = encodeURIComponent(`Hello AJT Overseas, I would like to apply for the position: ${appliedJob.title} (${appliedJob.country})`);
+      window.open(`https://wa.me/919990998229?text=${text}`, "_blank");
+    }
     setTimeout(() => {
       setAppliedJob(null);
       setFormSubmitted(false);

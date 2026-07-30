@@ -30,9 +30,9 @@ export default function FloatButtons() {
   };
 
   const openWhatsApp = () => {
-    const phoneNumber = "919718573005";
+    const phoneNumber = "919990998229";
     const text = encodeURIComponent(
-      "Hello AJT Overseas! I would like to book a counselling session for International Recruitment or Study Abroad."
+      "Hello AJT Overseas! I would like to inquire about International Recruitment and Study Abroad opportunities."
     );
     window.open(`https://wa.me/${phoneNumber}?text=${text}`, "_blank");
   };

@@ -14,7 +14,7 @@ export default function StudyAbroadDestinations() {
 
   const regions: RegionFilter[] = ["All", "Europe", "Asia-Pacific", "Americas", "Middle East"];
 
-  const whatsappStudy = "https://wa.me/919625903005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20book%20a%20counselling%20session%20for%20Study%20Abroad";
+  const whatsappStudy = "https://wa.me/918595433005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20Study%20Abroad";
 
   const filteredDestinations = useMemo(() => {
     return studyAbroadDestinations.filter((item) => {
@@ -71,7 +71,7 @@ export default function StudyAbroadDestinations() {
               className="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold px-5 py-2.5 rounded-xl inline-flex items-center justify-center gap-2 shadow-md transition-all whitespace-nowrap"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
-              <span>Book Counselling (+91-9625903005)</span>
+              <span>Book Counselling (+91-8595433005)</span>
             </a>
           </div>
         </div>
@@ -186,7 +186,7 @@ export default function StudyAbroadDestinations() {
                 Planning to study in one of these {studyAbroadDestinations.length} destinations?
               </h4>
               <p className="text-xs text-muted-custom mt-0.5">
-                Connect on WhatsApp (+91-9625903005). Our academic counselors will evaluate your profile and guide you.
+                Connect on WhatsApp (+91-8595433005). Our academic counselors will evaluate your profile and guide you.
               </p>
             </div>
           </div>
