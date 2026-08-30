@@ -11,7 +11,8 @@ import {
   Building,
   GraduationCap,
   Briefcase,
-  Sparkles
+  Sparkles,
+  AlertCircle
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
@@ -31,15 +32,35 @@ type FormInputs = {
 
 export default function ContactSection() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormInputs>();
-  const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle");
+  const [formState, setFormState] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const onSubmit = async (data: FormInputs) => {
     setFormState("submitting");
-    // Simulate API request
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setFormState("success");
-    reset();
-    setTimeout(() => setFormState("idle"), 4000);
+    setErrorMessage("");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send enquiry. Please try again later.");
+      }
+
+      setFormState("success");
+      reset();
+      setTimeout(() => setFormState("idle"), 5000);
+    } catch (err: any) {
+      console.error("Submission error:", err);
+      setFormState("error");
+      setErrorMessage(err.message || "An unexpected error occurred. Please try again.");
+    }
   };
 
   // Cards Data representing the three specialized desks
@@ -242,6 +263,16 @@ export default function ContactSection() {
                     <div className="text-xs font-bold text-muted-custom uppercase tracking-widest border-b border-borders pb-2">
                       Send An Enquiry
                     </div>
+
+                    {formState === "error" && errorMessage && (
+                      <div className="p-4 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3 text-red-700 text-xs font-semibold">
+                        <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-bold mb-0.5">Submission Failed</p>
+                          <p>{errorMessage}</p>
+                        </div>
+                      </div>
+                    )}
 
                     {/* Inquiry Type Select */}
                     <div className="flex flex-col gap-1.5">
