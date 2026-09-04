@@ -6,7 +6,7 @@ import { GraduationCap, ArrowRight, BookOpen, Compass, Award, Building, MessageS
 
 export default function StudyAbroadPage() {
   const [showPosterModal, setShowPosterModal] = useState(false);
-  const whatsappUrl = "https://wa.me/918595433005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20Study%20Abroad";
+  const whatsappUrl = "https://wa.me/919625903005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20Study%20Abroad";
 
   return (
     <div className="bg-slate-50 min-h-screen pb-24">
@@ -93,7 +93,7 @@ export default function StudyAbroadPage() {
                 className="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs md:text-sm font-bold px-6 py-3.5 rounded-xl inline-flex items-center gap-2.5 shadow-md transition-all"
               >
                 <MessageSquare className="w-4 h-4 fill-current" />
-                <span>Book Counselling Session (+91-8595433005)</span>
+                <span>Book Counselling Session (+91-9625903005)</span>
               </a>
 
               <button
@@ -140,7 +140,7 @@ export default function StudyAbroadPage() {
 
               <div className="p-4 text-center">
                 <p className="text-xs font-bold text-primary">AJT Overseas Official Study Abroad Poster</p>
-                <p className="text-[11px] text-muted-custom mt-0.5">Call / WhatsApp: +91-8595433005 | recruiter@ajtoverseas.com</p>
+                <p className="text-[11px] text-muted-custom mt-0.5">Call / WhatsApp: +91-9625903005, +91-8595433005 | recruiter@ajtoverseas.com</p>
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function StudyAbroadPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(23,63,122,0.4)_0%,transparent_70%)] pointer-events-none" />
           <h2 className="text-3xl font-bold tracking-tight mb-4 relative z-10">Secure Your International Education Pathway</h2>
           <p className="text-sm text-white/70 max-w-xl mx-auto mb-8 relative z-10">
-            Get in touch for a free counseling session on WhatsApp (+91-8595433005). We will evaluate your profile and short-list universities.
+            Get in touch for a free counseling session on WhatsApp (+91-9625903005). We will evaluate your profile and short-list universities.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 relative z-10">
             <a
@@ -202,7 +202,7 @@ export default function StudyAbroadPage() {
             </div>
 
             <div className="pt-2 px-2 flex flex-col sm:flex-row items-center justify-between gap-3">
-              <p className="text-xs text-muted-custom">Call / WhatsApp: +91-8595433005 | recruiter@ajtoverseas.com</p>
+              <p className="text-xs text-muted-custom">Call / WhatsApp: +91-9625903005, +91-8595433005 | recruiter@ajtoverseas.com</p>
               <a
                 href={whatsappUrl}
                 target="_blank"

@@ -79,14 +79,14 @@ export default function ContactSection() {
     },
     {
       id: "recruitment",
-      badge: "Student Enquiries",
+      badge: "Candidates & Job Seekers",
       title: "International Recruitment",
       icon: Briefcase,
       iconColor: "text-amber-600 bg-amber-50",
       glowBg: "bg-amber-500/5",
       phones: [
-        { raw: "+919990998229", formatted: "+91 99909 98229", wa: "919990998229" },
-        { raw: "+919990998229", formatted: "+91 99909 98229", wa: "919990998229" }
+        { raw: "+919990803701", formatted: "+91 99908 03701", wa: "919990803701" },
+        { raw: "+919718573005", formatted: "+91 97185 73005", wa: "919718573005" }
       ],
       email: "hr@ajtoverseas.com"
     },
@@ -98,7 +98,7 @@ export default function ContactSection() {
       iconColor: "text-purple-600 bg-purple-50",
       glowBg: "bg-purple-500/5",
       phones: [
-        { raw: "+918595433005", formatted: "+91 85954 33005", wa: "918595433005" },
+        { raw: "+919625903005", formatted: "+91 96259 03005", wa: "919625903005" },
         { raw: "+918595433005", formatted: "+91 85954 33005", wa: "918595433005" }
       ],
       email: "recruiter@ajtoverseas.com"

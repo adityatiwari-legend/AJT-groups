@@ -235,7 +235,7 @@ export default function IndustryDetailPage({ params }: PageProps) {
     const text = encodeURIComponent(
       `Hello AJT Overseas, I would like to apply for positions in ${industry.name}.\nName: ${fullName}\nEmail: ${email}\nExperience: ${exp} Years\nDetails: ${details}`
     );
-    window.open(`https://wa.me/919990998229?text=${text}`, "_blank");
+    window.open(`https://wa.me/919990803701?text=${text}`, "_blank");
   };
 
   return (
@@ -363,7 +363,7 @@ export default function IndustryDetailPage({ params }: PageProps) {
                   className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold py-3.5 rounded-lg shadow-sm transition-all text-center flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
-                  <span>Apply via WhatsApp (+91-9990998229)</span>
+                  <span>Apply via WhatsApp (+91-9990803701)</span>
                 </button>
               </form>
             </div>

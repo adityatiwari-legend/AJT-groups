@@ -37,7 +37,7 @@ export default function JobsPage() {
 
   const handleApply = (job: any) => {
     const text = encodeURIComponent(`Hello AJT Overseas, I would like to apply for the position: ${job.title} (${job.country})`);
-    window.open(`https://wa.me/919990998229?text=${text}`, "_blank");
+    window.open(`https://wa.me/919990803701?text=${text}`, "_blank");
   };
 
   const submitApplication = (e: React.FormEvent) => {
@@ -45,7 +45,7 @@ export default function JobsPage() {
     setFormSubmitted(true);
     if (appliedJob) {
       const text = encodeURIComponent(`Hello AJT Overseas, I would like to apply for the position: ${appliedJob.title} (${appliedJob.country})`);
-      window.open(`https://wa.me/919990998229?text=${text}`, "_blank");
+      window.open(`https://wa.me/919990803701?text=${text}`, "_blank");
     }
     setTimeout(() => {
       setAppliedJob(null);

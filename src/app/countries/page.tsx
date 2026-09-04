@@ -10,8 +10,8 @@ export default function CountriesPage() {
   const [filter, setFilter] = useState<"all" | "recruitment" | "study">("all");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const whatsappRecruitment = "https://wa.me/919990998229?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20International%20Recruitment";
-  const whatsappStudy = "https://wa.me/918595433005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20Study%20Abroad";
+  const whatsappRecruitment = "https://wa.me/919990803701?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20International%20Recruitment";
+  const whatsappStudy = "https://wa.me/919625903005?text=Hello%20AJT%20Overseas%2C%20I%20would%20like%20to%20apply%20for%20Study%20Abroad";
 
   const allCountries = useMemo(() => {
     const rec = recruitmentDestinations.map(r => ({
@@ -65,7 +65,7 @@ export default function CountriesPage() {
               className="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs md:text-sm font-bold px-6 py-3 rounded-xl inline-flex items-center gap-2 shadow-lg"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
-              <span className="font-bold">Recruitment Counselling (+91-9990998229)</span>
+              <span className="font-bold">Recruitment Counselling (+91-9990803701)</span>
             </a>
             <a
               href={whatsappStudy}
@@ -74,7 +74,7 @@ export default function CountriesPage() {
               className="bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200/60 text-xs md:text-sm font-semibold px-5 py-3 rounded-xl inline-flex items-center gap-2 transition-all shadow-xs"
             >
               <MessageSquare className="w-4 h-4 text-amber-600 fill-current" />
-              <span className="font-bold">Study Abroad Counselling (+91-8595433005)</span>
+              <span className="font-bold">Study Abroad Counselling (+91-9625903005)</span>
             </a>
           </div>
         </div>
